@@ -1,0 +1,10 @@
+.modal-container {
+    width: 260px;
+    max-width: 380px;
+    background-color:var(--c-primary);
+}
+@media screen and (min-width: 420px) {
+    .modal-container {
+        width: 80%;
+    }
+}

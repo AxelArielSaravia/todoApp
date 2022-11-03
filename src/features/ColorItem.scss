@@ -1,0 +1,12 @@
+.color { 
+    .color-item {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    input:checked + .color-item {
+        box-shadow: 0 0 0 3px var(--c-transitive2);
+        opacity: 60%;
+    }
+}

@@ -1,0 +1,80 @@
+/* FLEX */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-wrap { flex-wrap: wrap; }
+.flex-grow-1 { flex-grow: 1; }
+/* GRID */
+.grid { display: grid; }
+/*ALIGNAMENT*/
+.align-c { align-items: center }
+.align-end { align-items:flex-end; }
+.align-start { align-items:flex-start; }
+.justify-c { justify-content: center; }
+.justify-sb { justify-content: space-between; }
+.justify-sa { justify-content: space-around; }
+.justify-end { justify-content:flex-end; }
+.justify-start { justify-content:flex-start; }
+/* PADDING */
+.p-1 { padding: 2px; }
+.p-2 { padding: 5px; }
+.p-3 { padding: 10px; }
+/* MARGIN */
+.m-2 { margin: 5px; }
+.m-3 { margin: 10px; }
+/* BORDER RADIUS */
+.br-rounded { border-radius: 50%; }
+.br-1 { border-radius: 2px; }
+.br-2 { border-radius: 5px; }
+.br-3 { border-radius: 10px; }
+/* VISIBILITY */
+.hidden { display: none; }
+/*COLOR*/
+.c-purple { color: var(--c-purple);}
+.c-red { color: var(--c-red);}
+.c-green { color: var(--c-green);}
+.c-brown { color: var(--c-brown);}
+.c-yellow { color: var(--c-yellow);}
+.c-blue { color: var(--c-blue);}
+.c-pink { color: var(--c-pink);}
+.c-none { color: var(--c-secondary);}
+/*BACKGROUND COLOR*/
+.bc-purple { background-color: var(--c-purple);}
+.bc-red { background-color: var(--c-red);}
+.bc-green { background-color: var(--c-green);}
+.bc-brown { background-color: var(--c-brown);}
+.bc-yellow { background-color: var(--c-yellow);}
+.bc-blue { background-color: var(--c-blue);}
+.bc-pink { background-color: var(--c-pink);}
+.bc-none { background-color: var(--c-secondary);}
+/* TEXT */
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-bold { font-weight: 800; }
+/* FONTS SIZE */
+.fs-text-l { font-size: 1rem; }
+.fs-text { font-size: 0.8rem; }
+.fs-text-s { font-size: 0.6rem; }
+
+@media screen and (min-width: 420px) {
+  .fs-text-l { font-size: 1.2rem; }
+  .fs-text { font-size: 1rem; }
+  .fs-text-s  { font-size: 0.8rem; }
+}
+
+@media screen and (min-width: 1400px) {
+  .fs-text-l { font-size: 1.4rem; }
+  .fs-text { font-size: 1.2rem; }
+  .fs-text-s  { font-size: 1rem; }
+}
+

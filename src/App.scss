@@ -1,0 +1,35 @@
+header { 
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.config,
+.add-todo,
+.change-theme {
+    background-color: var(--c-transitive1);
+}
+
+aside {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--c-transparent1);
+    z-index: 10;
+}
+.todos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer { padding: 20px 0 40px; }
+
+@media screen and (min-width:650px) {
+    .todos-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

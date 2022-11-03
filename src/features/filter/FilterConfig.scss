@@ -1,0 +1,29 @@
+.filter-config {
+    position: relative;
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border: 2px solid var(--c-transitive2);
+        width: 30px;
+        height: 30px;
+        .icon {
+            width: 30px;
+        }
+    }
+}
+.action-button {
+    border: 1px solid var(--c-transitive2);
+}
+
+.filterConfig-status {
+    p { cursor: pointer; }
+    input:checked+p { background-color: var(--c-transitive2); }
+}
+
+.filterConfig-tags_container {
+    max-height: 250px;
+    margin: 20px 10px;
+    overflow: auto;
+}

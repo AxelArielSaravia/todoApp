@@ -1,0 +1,17 @@
+.icon { 
+    width: 20px;
+}
+
+.icon-checkmark,
+.icon-circle,
+.icon-add {
+    width: 30px;
+}
+
+@media screen and (min-width: 420px) {
+    .icon { width: 30px; }
+    .icon-close {width: 20px;}
+    .icon-checkmark,
+    .icon-circle,
+    .icon-add { width: 40px; }
+}
