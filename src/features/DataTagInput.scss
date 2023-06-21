@@ -1,0 +1,17 @@
+.data-tag {
+    position: relative;
+
+    .select-tag {
+        position: absolute;
+        max-height: 72px;
+        overflow: auto;
+        background-color: field;
+        z-index: 2;
+        
+        .posible-tag { border: 1px solid var(--c-transitive1); }
+    }
+}
+.data-tag_button {
+    border: 1px solid var(--c-transitive2);
+    margin-left: 5px;
+}

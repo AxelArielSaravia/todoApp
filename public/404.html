@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e4d3d3" />
+    <meta
+      name="description"
+      content="React redux todo app"
+    />
+    <meta 
+      name="keywords" 
+      content="todo, todo-list, react, redux, javascript"
+    >
+    <meta name="author" content="Axel Ariel Saravia">
+    <meta name="creator" content="axarisar"> 
+    <meta name="ranting" content="general">
+    <meta name="canonical" href="https://aas-todo-app.web.app/">
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <!--  SOCIAL MEDIA meta tags -->
+    <meta property="og:title" content="Todo App">
+    <meta property="og:description" content="Todo App created with React and Redux">
+    <meta property="og:type" content="profile"/>
+    <meta property="og:url" content="https://aas-todo-app.web.app/">
+    <meta property="og:image" content="%PUBLIC_URL%/android-chrome-192x192.png"/>
+    <meta property="og:image:secure_url" content="%PUBLIC_URL%/android-chrome-192x19.png" />
+    <meta property="og:image:alt" content="todo"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <!--  Title and Icon-->
+    <title>Todo App</title>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
+    <style media="screen">
+      .dark {--c-primary: #181616;--c-secondary: #e4d3d3;--c-transitive1: #2e2929;--c-transitive2: #464242;--c-transparent1: #e4d3d32a;--c-purple: #8a5db4;--c-red: #a85757;--c-green: #67ad59;--c-brown: #b3835c;--c-yellow: #a79355;--c-blue: #5866b1;--c-pink: #b65ab1; accent-color: #f7e0e0;color-scheme: dark;}
+      .light {--c-primary: #e4d3d3;--c-secondary: #131212;--c-transitive1: #cfbcbc;--c-transitive2: #a89999;--c-transparent1: #1312122a;--c-purple: #53376d;--c-red: #6d3737;--c-green: #406d37;--c-brown: #6d4f37;--c-yellow: #6d6037;--c-blue: #373f6d;--c-pink: #6d376a; accent-color: #181616;color-scheme: light;} 
+      body {padding: 0;margin: 0;width: 100%;height: 100%;font-family: Verdana, sans-serif; font-weight: normal;font-size: 10px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;-webkit-tap-highlight-color: transparent;box-sizing: border-box;background-color:var(--c-primary);color: var(--c-secondary);} 
+      *,*::after, *::before {padding: 0;margin: 0;box-sizing: border-box;font-family: Verdana, sans-serif; }
+      button {padding: 0;margin: 0;outline: none;border: none;cursor: pointer;background-color: transparent;user-select: none;color: var(--c-secondary); border-radius: 50%;} 
+      button:hover, button:active,button:focus {box-shadow: transparent; user-select: none;}
+      button:active {background-color: var(--c-transitive2);opacity: 80%;}
+      .change-theme-button { background-color: transparent; color: var(--c-secondary); padding: 2px; }
+      .hidden { display: none; } .icon { width: 20px; }.title { padding-left: 20px; }.p-3 { padding: 10px; }
+      .flex-row { display: flex; flex-direction: row; }.align-c { align-items: center; }.justify-sb { justify-content: space-between; } 
+      #message { width: 90%; background: var(--c-secondary); color: var(--c-primary);  max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
+      #message h3 { font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
+      #message h2 { font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      @media (hover: hover) and (pointer: fine) {
+        button:hover { background-color: var(--c-transitive2);}
+      }
+      @media screen and (min-width: 300px) {.fs-title { font-size: 1.2rem; }}
+      @media screen and (min-width: 420px) { .fs-title { font-size: 1.4rem; }.icon { width: 30px; }.fs-text-l { font-size: 1.2rem; }.fs-text { font-size: 1rem; }}
+      @media screen and (min-width: 1400px) {.fs-title { font-size: 1.6rem; }.fs-text-l { font-size: 1.4rem; }.fs-text { font-size: 1.2rem; }}
+      @media screen and (max-width: 370px) {#message { margin:100px 5px 0;}}
+    </style>
+  </head>
+  <body>
+    <header class="p-3 flex-row align-c justify-sb">
+        <div class="title">
+            <a href="https://aas-todo-app.web.app/" target="_self" rel="noreferrer noopener">
+            <h1 class="fs-text">Todo App</h1>
+            </a>
+        </div>
+        <button id="change-theme-button" class="change-theme-button fs-text-l flex-row align-c" type="button" onclick="useThemeChanger()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="hidden icon ionicon-sunny" viewBox="0 0 512 512">
+                <title>Light</title>
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94"/>
+                <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stsroke-linecap="round" stroke-miterlimit="10" stroke-width="32"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hidden icon ionicon-moon" viewBox="0 0 512 512">
+                <title>Dark</title>
+                <path d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z"  fill="none" stroke="currentColor"stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+            </svg>
+        </button>
+    </header>
+    <main id="message">
+        <h3>404</h3>
+        <h2>Page Not Found</h1>
+        <p>The specified file was not found on this website. Please check the URL for mistakes and try again.</p>
+    </main>
+    <script>
+        let theme = localStorage.getItem("theme") !== null  ? localStorage.getItem("theme") : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+        function changeThemes(bool) {
+            const btn = document.getElementById("change-theme-button");
+            console.log(btn);
+            console.log("btn.firstElementChild" ,btn.firstElementChild);
+            if (bool) {
+                theme = "dark";
+                document.body.className = "dark";
+                btn.firstElementChild.classList.remove("hidden");
+                btn.lastElementChild.classList.add("hidden"); 
+            } else {
+                theme = "ligth";
+                document.body.className = "light";
+                btn.firstElementChild.classList.add("hidden");
+                btn.lastElementChild.classList.remove("hidden"); 
+            }
+            localStorage.setItem('theme', theme);
+        }
+        function useThemeChanger() { changeThemes(theme !== "dark"); }
+        changeThemes(theme === "dark");
+    </script>
+  </body>
+</html>

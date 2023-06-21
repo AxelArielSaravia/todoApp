@@ -1,0 +1,31 @@
+.config-todoItem {
+    .todo-text {
+        width: 100%;
+        margin-top: 10px;
+        resize: vertical;
+        max-height: 200px;
+        min-height: 50px;
+
+    }
+    .todo-text.required {
+        outline: none;
+
+        border-radius: 5px;
+        outline: 2px solid red;
+        outline-offset: -3px;
+    }
+    .confirm-button  {
+        border: 1px solid var(--c-transitive1);
+    }
+    .icon-close,
+    .icon-checkmark {
+        width: 40px;
+    }
+
+    .editDate-button {
+        cursor: pointer;
+        input:checked+p {
+            background-color: var(--c-transitive2);
+        }
+    }
+}
